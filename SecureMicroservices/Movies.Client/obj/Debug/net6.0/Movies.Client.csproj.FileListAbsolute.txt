@@ -455,3 +455,4 @@ D:\Learning\DotnetCore\Microservices_IdentityServer\IdentityServer\SecureMicrose
 D:\Learning\DotnetCore\Microservices_IdentityServer\IdentityServer\SecureMicroservices\Movies.Client\obj\Debug\net6.0\Movies.Client.pdb
 D:\Learning\DotnetCore\Microservices_IdentityServer\IdentityServer\SecureMicroservices\Movies.Client\obj\Debug\net6.0\Movies.Client.genruntimeconfig.cache
 D:\Learning\DotnetCore\Microservices_IdentityServer\IdentityServer\SecureMicroservices\Movies.Client\obj\Debug\net6.0\ref\Movies.Client.dll
+D:\Learning\DotnetCore\Microservices_IdentityServer\IdentityServer\SecureMicroservices\Movies.Client\bin\Debug\net6.0\IdentityModel.dll

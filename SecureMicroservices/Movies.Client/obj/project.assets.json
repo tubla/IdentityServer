@@ -596,6 +596,19 @@
           }
         }
       },
+      "IdentityModel/6.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "MessagePack/2.1.152": {
         "type": "package",
         "dependencies": {
@@ -4179,6 +4192,30 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "IdentityModel/6.1.0": {
+      "sha512": "W9A6U26se5Jeo+QoczLfXW5LgBDXL0bBfnb2DWWZMivv9L52ls/85WtEGZQ8kSgOUecuBUlQZdpu02Uni8n1tg==",
+      "type": "package",
+      "path": "identitymodel/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.jpg",
+        "identitymodel.6.1.0.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net461/IdentityModel.dll",
+        "lib/net461/IdentityModel.pdb",
+        "lib/net461/IdentityModel.xml",
+        "lib/net472/IdentityModel.dll",
+        "lib/net472/IdentityModel.pdb",
+        "lib/net472/IdentityModel.xml",
+        "lib/net6.0/IdentityModel.dll",
+        "lib/net6.0/IdentityModel.pdb",
+        "lib/net6.0/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
       ]
     },
     "MessagePack/2.1.152": {
@@ -9923,6 +9960,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "IdentityModel >= 6.1.0",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 6.0.19",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.14"
     ]
@@ -9967,6 +10005,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "IdentityModel": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
             "target": "Package",
             "version": "[6.0.19, )"

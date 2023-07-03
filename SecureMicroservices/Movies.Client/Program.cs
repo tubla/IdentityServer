@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.Net.Http.Headers;
 using Movies.Client.ApiServices;
+using Movies.Client.HttpHandlers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IMovieApiService,MovieApiService>();
@@ -14,7 +18,7 @@ builder.Services.AddAuthentication(options =>
                                         })
                                         .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => {
 
-                                            options.Cookie.SameSite = SameSiteMode.Strict;
+                                            options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict;
                                         })
                                         .AddOpenIdConnect(options =>
                                         {
@@ -32,8 +36,40 @@ builder.Services.AddAuthentication(options =>
 
                                         });
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+                                        // Add services to the container.
+                                        builder.Services.AddControllersWithViews();
+
+                                        builder.Services.AddTransient<AuthenticationDelegateHandler>();
+
+// Add HttpClients
+
+// 1. API Client
+
+builder.Services.AddHttpClient("MovieAPIClient", client =>
+                                        {
+                                            client.BaseAddress = new Uri("https://localhost:5001/");
+                                            client.DefaultRequestHeaders.Clear();
+                                            client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+                                        }).AddHttpMessageHandler<AuthenticationDelegateHandler>();
+
+// 2. Identity Server
+
+builder.Services.AddHttpClient("IDSClient", client =>
+                                        {
+                                            client.BaseAddress = new Uri("https://localhost:5005/");
+                                            client.DefaultRequestHeaders.Clear();
+                                            client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+                                        });
+
+// 3. Add API Client Credential to request for a token from Identity Server
+
+builder.Services.AddSingleton(new ClientCredentialsTokenRequest
+                                        {
+                                            Address = "https://localhost:5005/connect/token",
+                                            ClientId = "movieClient",
+                                            ClientSecret = "secret",
+                                            Scope = "movieAPI"
+                                        });
 
 var app = builder.Build();
 

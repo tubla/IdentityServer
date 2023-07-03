@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Movies.API.Data;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 

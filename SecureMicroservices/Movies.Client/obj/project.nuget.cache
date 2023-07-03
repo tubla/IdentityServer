@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oVUiyIy+nFENsAW3DTRuyzG5LHcg0Z8tTrpssV9j1O6oRpyy0l2loNhvVTfBxHq8koR/rpbm3cObGMmH1xQSuw==",
+  "dgSpecHash": "2UH0poPnEm33tG5nTHhISKY3Hw61Nm0fjJf0G3Ztsp/xTnuCCSMnqiICHw3b1tdMX1ZGPwsN1Mnv8AUgdIaKAA==",
   "success": true,
   "projectFilePath": "D:\\Learning\\DotnetCore\\Microservices_IdentityServer\\IdentityServer\\SecureMicroservices\\Movies.Client\\Movies.Client.csproj",
   "expectedPackageFiles": [
@@ -54,6 +54,7 @@
     "C:\\Users\\RAHUL\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\RAHUL\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\RAHUL\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\RAHUL\\.nuget\\packages\\identitymodel\\6.1.0\\identitymodel.6.1.0.nupkg.sha512",
     "C:\\Users\\RAHUL\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\RAHUL\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\RAHUL\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
