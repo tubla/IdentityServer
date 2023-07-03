@@ -1,6 +1,8 @@
-﻿using IdentityServer4;
+﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
+using System.Security.Claims;
 
 namespace IdentiryServer
 {
@@ -47,7 +49,26 @@ namespace IdentiryServer
                 new ApiScope("movieAPI", "Movie API")
             };
         public static IEnumerable<ApiResource> ApiResources => new ApiResource[] { };
-        public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[] { };
-        public static IEnumerable<TestUser> TestUsers => new TestUser[] { };
+        public static IEnumerable<IdentityResource> IdentityResources => 
+            new IdentityResource[] 
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
+            };
+        public static IEnumerable<TestUser> TestUsers => 
+            new TestUser[] 
+            {
+                new TestUser()
+                {
+                    SubjectId = "ef5dccb6-c3bd-458d-858b-e83eaa430cba",
+                    Username = "rahul",
+                    Password = "rahul",
+                    Claims = new List<Claim>
+                    {
+                        new Claim(JwtClaimTypes.GivenName, "rahul"),
+                        new Claim(JwtClaimTypes.FamilyName,"roy")
+                    }
+                }
+            };
     }
 }

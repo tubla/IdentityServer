@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddIdentityServer()
                 .AddInMemoryClients(Config.Clients)
                 .AddInMemoryApiScopes(Config.ApiScopes)
+                .AddInMemoryIdentityResources(Config.IdentityResources)
+                .AddTestUsers(Config.TestUsers.ToList())
                 .AddDeveloperSigningCredential();
 
 builder.Services.AddControllersWithViews();
@@ -17,6 +19,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseIdentityServer();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
